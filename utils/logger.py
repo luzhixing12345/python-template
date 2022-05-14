@@ -14,6 +14,7 @@ def set_logger(cfg):
     
     file_handler = logging.FileHandler(os.path.join(cfg.OUTPUT_DIR, f"{cfg.PROJECT_NAME}.log"))
     file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(logger.handlers[0].formatter)
     logger.addHandler(file_handler)
     
     
